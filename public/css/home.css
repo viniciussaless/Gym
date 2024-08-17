@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: url('../img/pexels-leonardho-1552252.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-size: 16px;
+}
+
+
+main.cards {
+    display: flex;
+    flex-wrap: wrap; /* Adiciona esta linha */
+    justify-content: center; /* Alinha os cards ao centro */
+    padding: 32px;
+}
+
+main.cards section.card {
+    flex: 1 1 calc(50% - 32px); /* Define que cada card ocupa 50% da largura menos 32px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, #e52424, #e48989);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 468px;
+    margin: 16px; /* Ajusta a margem para 16px para evitar sobreposição */
+}
+main.cards section.card .icon {
+    width: 64px;
+    height: 64px;
+}
+
+main.cards section.card img {
+    width: 100%;
+}
+
+main.cards section.card h3 {
+    font-size: 100%;
+    margin: 16px 0;
+}
+
+main.cards section.card span {
+    font-weight: 300;
+    max-width: 240px;
+    font-size: 80%;
+    margin-bottom: 16px;
+}
+
+main.cards section.card button {
+    padding: 0.5rem 1rem;
+    width: 100px; 
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 16px 0;
+}
+
+main.cards section.card.segunda button {
+    background: linear-gradient(to right, #e52424, #e48989);
+
+}
+
+main.cards section.card.terca button {
+    background: linear-gradient(to right, #e52424, #e48989);
+}
+
+main.cards section.card.quarta button {
+    background: linear-gradient(to right, #e52424, #e48989);
+}
+
+main.cards section.card.quinta button {
+    background: linear-gradient(to right, #e52424, #e48989);
+}
+
+main.cards section.card.sexta button {
+    background: linear-gradient(to right, #e52424, #e48989);
+}
+
+main.cards section.card.contact {
+    box-shadow: 20px 20px 50px -30px #DBC4FF;
+}
+
+main.cards section.card.shop {
+    box-shadow: 20px 20px 50px -30px #AFD6FF;
+}
+
+main.cards section.card.about {
+    box-shadow: 20px 20px 50px -30px #FFC1D5;
+}
+
+@media screen and (max-width: 720px) {
+    main.cards {
+        flex-direction: column;
+    }
+
+    main.cards section.card {
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+
+    main.cards section.card:last-child {
+        margin-bottom: 0;
+    }
+
+    main.cards section.card button {
+        font-size: 70%;
+    }
+}

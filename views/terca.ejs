@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terça - Gym</title>
+    <link rel="stylesheet" href="../css/dias.css">
+    <link rel="stylesheet" href="../css/segunda.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <a href="/home" class="back-button"><i class="fas fa-arrow-left"></i> Voltar</a>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Nome do exercício</th>
+                <th>Musculo</th>
+                <th>Peso (Kg)</th>
+                <th>Repetição</th>
+                <th>Dia da semana</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody id="exerciseTableBody">
+            <% exercicios.forEach(exercicio => { %>
+            <tr>
+                <td><%= exercicio.NomeExercicio %></td>
+                <td><%= exercicio.Musculo %></td>
+                <td><%= exercicio.Peso %></td>
+                <td><%= exercicio.Reps %></td>
+                <td><%= exercicio.DiaSemana %></td>
+                <td><button class="remove-button" onclick="removeExercise(this, <%=exercicio.idExercicios %>)">Remover</button></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <div class="button-container">
+        <button class="styled-button" onclick="openPopup()">Adicionar</button>
+    </div>
+
+    <!-- Pop-up Form -->
+    <div id="popupForm" class="popup-form" style="display: none;">
+        <form id="exerciseForm">
+            <h2>Adicionar Exercício</h2>
+            <label for="nome">Nome do exercício:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="musculo">Musculo:</label>
+            <input type="text" id="musculo" name="musculo" required>
+            <label for="peso">Peso (Kg):</label>
+            <input type="number" id="peso" name="peso" required>
+            <label for="repeticao">Repetição:</label>
+            <input type="text" id="repeticao" name="repeticao" required>
+            <label for="diaSemana">Dia da Semana</label>
+            <select id="diaSemana" name="diaSemana">
+                <option value="segunda">Segunda-feira</option>
+                <option value="terca">Terça-feira</option>
+                <option value="quarta">Quarta-feira</option>
+                <option value="quinta">Quinta-feira</option>
+                <option value="sexta">Sexta-feira</option>
+            </select>
+
+            <button type="submit">Adicionar</button>
+            <button type="button" onclick="closePopup()">Cancelar</button>
+        </form>
+    </div>
+
+    <script src="../js/dias.js"></script>
+</body>
+</html>
